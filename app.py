@@ -16,7 +16,7 @@ nltk.download('punkt', download_dir='/root/nltk_data')  # Download punkt to the 
 app = Flask(__name__)
 
 # URL to PDF file
-PDF_URL = "https://ioclhrchatgpt.blob.core.windows.net/documents/hrhbtb.pdf"
+PDF_URL = "https://ioclbotchatgpt.blob.core.windows.net/iocl-pdf/hrhbtb.pdf"
 
 # Text cleaning function
 def clean_text(text):
