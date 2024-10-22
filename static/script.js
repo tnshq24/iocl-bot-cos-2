@@ -1,14 +1,14 @@
 // Environment variables (Replace with actual values)
-const endpoint = "https://iocl-hr-openai-service.openai.azure.com/";
+const endpoint = "https://iocl-new-bot-ai-service.openai.azure.com/";
 const deployment = "gpt-4o";
-const subscriptionKey = "9f82a1e82c7444e8a8453f9d7f787e2a"; // Your actual API key
+const subscriptionKey = "f5cbf107d44b46e78d5ff09f89ae303b"; // Your actual API key
  
 // Search Service Variables
-const searchEndpoint = "https://ioclhrbotlanguageservice-as4opiftbiczhpi.search.windows.net";
-const searchKey = "KdAi5bqgwcJcIW1wLhD3DbanfpxoghPuU1wtzUGxmZAzSeD9rKzi";
-const searchIndex = "iocl-idx";
+const searchEndpoint = "https://iocl-new-bot-ai-search.search.windows.net";
+const searchKey = "bFW2dtpI8GA5zaTwfLh6yig3XlKLMPsjwq8LGJlfoeAzSeDWfVKH";
+const searchIndex = "iocl-new-bot-idx";
 async function callChatbotAPI(message) {
-    const url = `${endpoint}/openai/deployments/${deployment}/chat/completions?api-version=2024-02-15-preview`;
+    const url = `${endpoint}/openai/deployments/${deployment}/chat/completions?api-version=2024-05-01-preview`;
 
     const headers = {
         "Content-Type": "application/json",
@@ -19,7 +19,7 @@ async function callChatbotAPI(message) {
         "messages": [
             {
                 "role": "system",
-                "content": "All responses must be formatted as follows: The response should provide clear and concise information relevant to the query. Always include the following reference link at the end of each response: https://ioclhrchatgpt.blob.core.windows.net/documents/hrhbtb.pdf. If the response does not come from the document, do not include the link."
+                "content": "All responses must be formatted as follows: The response should provide clear and concise information relevant to the query. Always include the following reference link at the end of each response: https://ioclbotchatgpt.blob.core.windows.net/iocl-pdf/hrhbtb.pdf. If the response does not come from the document, do not include the link."
             },
             {
                 "role": "user",
@@ -41,7 +41,7 @@ async function callChatbotAPI(message) {
                     "query_type": "vector_simple_hybrid",
                     "fields_mapping": {},
                     "in_scope": true,
-                    "role_information": "All responses must be formatted as follows: The response should provide clear and concise information relevant to the query. Always include the following reference link at the end of each response: https://ioclhrchatgpt.blob.core.windows.net/documents/hrhbtb.pdf. If the response does not come from the document, do not include the link.",
+                    "role_information": "All responses must be formatted as follows: The response should provide clear and concise information relevant to the query. Always include the following reference link at the end of each response: https://ioclbotchatgpt.blob.core.windows.net/iocl-pdf/hrhbtb.pdf. If the response does not come from the document, do not include the link.",
                     "filter": null,
                     "strictness": 3,
                     "top_n_documents": 3,
@@ -51,7 +51,7 @@ async function callChatbotAPI(message) {
                     },
                     "embedding_dependency": {
                         "type": "deployment_name",
-                        "deployment_name": "iocl-ada"
+                        "deployment_name": "text-embedding-ada-002"
                     }
                 }
             }
